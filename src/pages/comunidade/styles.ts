@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#f4f5f6", //COR DO FUNDO MUDAR LEGAL
+        backgroundColor: "#e9ffff", //COR DO FUNDO MUDAR LEGAL
         justifyContent: "center",
         padding: 24,
     },
