@@ -25,7 +25,7 @@ export default function Routes(){
         <TabNav.Screen name='Notícias'
           component={Noticias}
           options={{
-            //headerShown: false,
+            headerShown: false,
             tabBarIcon: ({color, size, focused}) => {
               if(focused){
                 return <Ionicons name="home" size={size} color={color} />
