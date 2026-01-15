@@ -143,7 +143,8 @@ git push origin feat/minha-feature
 
 ### Licença
 
-Projeto **acadêmico e sem fins lucrativos**, desenvolvido no âmbito da disciplina **Contexto Social** (CEFET-MG/Timóteo).
+> Projeto **acadêmico e sem fins lucrativos**, desenvolvido no âmbito da disciplina **Contexto Social** (CEFET-MG/Timóteo).
+
 ---
 
 ### Contato
