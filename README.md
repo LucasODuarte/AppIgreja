@@ -1,5 +1,3 @@
-
-
 <h1 align="center">AppIgreja ⛪</h1>
 
 <p align="center">
@@ -7,16 +5,17 @@
   desenvolvido como projeto social-acadêmico no <strong>CEFET-MG/Timóteo</strong>.
 </p>
 
----
-
-## 🧭 Sobre o projeto
-
-O **AppIgreja** é um aplicativo criado para apoiar a comunicação, a organização de eventos e a gestão de grupos da **Igreja Nossa Senhora de Fátima**.  
-Nasceu no contexto da disciplina **Contexto Social (CEFET-MG/Timóteo)**, com propósito **não lucrativo**, promovendo impacto social real por meio de tecnologia.
-
 > **Status:** `<MVP em desenvolvimento>`  
 > **Plataforma:** `<mobile (Android/iOS) | web (PWA)>`  
 > **Stack:** `<ex.: React Native (Expo) + Firebase | Angular + Firebase | Flutter + Supabase>`
+
+---
+
+## 🎯 Objetivo
+
+- Facilitar a comunicação entre membros da comunidade.
+- Organizar eventos, escalas e pedidos de oração.
+- Promover inclusão digital e engajamento social.
 
 ---
 
@@ -28,7 +27,7 @@ Nasceu no contexto da disciplina **Contexto Social (CEFET-MG/Timóteo)**, com pr
 
 ---
 
-## ✨ Principais funcionalidades
+## ✨Funcionalidades
 
 - 📅 **Eventos e agenda:** criação, listagem, inscrições e lembretes  
 - 📰 **Mural de comunicados:** avisos e notícias para a comunidade  
@@ -51,19 +50,23 @@ Nasceu no contexto da disciplina **Contexto Social (CEFET-MG/Timóteo)**, com pr
 
 **Estrutura de pastas (exemplo):**
 ```
-/src
-/app              # navegação / shell
-/assets           # fontes, ícones, imagens
-/components       # UI reutilizável
-/features         # módulos por domínio (events, feed, prayer, groups, auth)
-/services         # APIs e repositórios
-/styles           # tema e tokens
-/utils            # helpers
+AppIgreja/
+      ├─ src/
+      │   ├─ app/           # Navegação / shell
+      │   ├─ assets/        # Ícones, imagens, fontes
+      │   ├─ components/    # UI reutilizável
+      │   ├─ features/      # Módulos por domínio (eventos, mural, oração, grupos, auth)
+      │   ├─ services/      # APIs e repositórios
+      │   ├─ styles/        # Tema e tokens
+      │   └─ utils/         # Helpers
+      ├─ .env.example       # Variáveis de ambiente
+      ├─ package.json       # Dependências
+      └─ README.md          # Este arquivo
 ```
 
 ---
 
-## 🚀 Como executar localmente
+## ▶️ Executar
 
 ### Pré-requisitos
 - **Node.js** `>= 18` e **npm**/**yarn**/**pnpm**  
@@ -77,85 +80,43 @@ npm install
 ```
 ---
 
-### Variáveis de ambiente
-
-Crie um arquivo `.env` (ou `.env.local`) baseado em `.env.example` com as chaves do backend, push e (opcional) pagamentos.
-
-```dotenv
-# -------------------------
-# Autenticação / Backend
-# -------------------------
-AUTH_PROVIDER="<firebase | keycloak | custom>"
-
-# Firebase (exemplo)
-FIREBASE_API_KEY="<sua-api-key>"
-FIREBASE_AUTH_DOMAIN="<seu-dominio.firebaseapp.com>"
-FIREBASE_PROJECT_ID="<seu-project-id>"
-FIREBASE_MESSAGING_SENDER_ID="<seu-sender-id>"
-FIREBASE_APP_ID="<seu-app-id>"
-
-# -------------------------
-# Notificações Push
-# -------------------------
-PUSH_PROVIDER="<FCM | OneSignal>"
-PUSH_KEY="<sua-chave-push>"
-
-# -------------------------
-# Pagamentos (opcional)
-# -------------------------
-PAYMENTS_PROVIDER="<Stripe | MercadoPago>"
-PAYMENTS_PUBLIC_KEY="<sua-chave-publica>"
-```
----
-
 ### Rodando o projeto
 
 ```bash
 # Ambiente de desenvolvimento
-npm run dev
-# ou
 npm start
 
 # Expo (mobile)
 expo start
 
-# Angular (web)
-ng serve
+# Web (PWA)
+npm run dev
+
 ```
+---
+
+## 🧩 Lógica em alto nível
+
+- Autenticação: Firebase Auth (e-mail, Google, Microsoft).
+- Eventos: CRUD integrado ao Firestore.
+- Notificações: Push via FCM ou OneSignal.
+- Interface: React Native + Design System responsivo.
+- 
+---
+
+##🛠️ Desenvolvimento
+
+- Recomendado usar VS Code com ESLint e Prettier.
+- Boas práticas: SOLID, Clean Architecture, lint + format.
 
 ---
 
-### Build / Distribuição
+## ✅ Status do projeto
+MVP em desenvolvimento, com espaço para melhorias:
 
-```bash
-# Web / PWA
-npm run build
-
-# Mobile (Expo EAS)
-eas build -p android
-eas build -p ios
-
-# Angular (produção)
-ng build --configuration production
-```
-
----
-
-### Qualidade de código
-
-- **Lint:** `npm run lint` — `<ESLint | TSLint>`
-- **Formatação:** `npm run format` — **Prettier**
-- **Testes unitários:** `npm test` — `<Jest | Vitest | Karma>`
-- **Cobertura:** `npm run test:coverage` (se configurado)
-- **E2E:** `npm run e2e` — `<Cypress | Detox>`
----
-
-### Segurança & Privacidade
-
-- Nunca comitar chaves e segredos (use `.env` + **Secrets** no CI).
-- Regras de segurança no backend (ex.: **Firestore Rules** / **RBAC**).
-- Coleta mínima de dados pessoais; adequação à **LGPD**.
-- Revisões periódicas de dependências (`npm audit` / `pnpm audit`).
+- Escala de ministérios.
+- Relatórios de engajamento.
+- Modo offline.
 
 ---
 ### Roadmap
