@@ -5,6 +5,12 @@
   desenvolvido como projeto social-acadêmico no <strong>CEFET-MG/Timóteo</strong>.
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/status-concluído-brightgreen" alt="Status">
+  <img src="https://img.shields.io/badge/versão-1.0.0-blue" alt="Versão">
+</p>
+
+
 > **Status:** `<MVP em desenvolvimento>`  
 > **Plataforma:** `<mobile (Android/iOS) | web (PWA)>`  
 > **Stack:** `<ex.: React Native (Expo) + Firebase | Angular + Firebase | Flutter + Supabase>`
