@@ -7,25 +7,6 @@
   desenvolvido como projeto social-acadêmico no <strong>CEFET-MG/Timóteo</strong>.
 </p>
 
-<p align="center">
-  <!-- Badges principais (ajuste os links do repositório se necessário) -->
-  <a href="https://github.com/LucasODuarte/AppIgreja/actions">
-    <img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/LucasODuarte/AppIgreja/ci.yml?label=CI&logo=githubactions&logoColor=white">
-  </a>
-  <a href="https://github.com/LucasODuarte/AppIgreja/issues">
-    <img alt="Issues abertas" src="https://img.shields.io/github/issues/LucasODuarte/AppIgreja?logo=github">
-  </a>
-  <a href="https://github.com/LucasODuarte/AppIgreja/pulls">
-    <img alt="PRs abertos" src="https://img.shields.io/github/issues-pr/LucasODuarte/AppIgreja?logo=github">
-  </a>
-  <img alt="Último commit" src="https://img.shields.io/github/last-commit/LucasODuarte/AppIgreja?logo=git&label=last%20commit">
-  <img alt="Tamanho do repo" src="https://img.shields.io/github/repo-size/LucasODuarte/AppIgreja?label=repo%20size">
-  <img alt="License" src="https://img.shields.io/badge/license-Academic%20/%20No%20Profit-blue">
-  <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen">
-  <img alt="Code style Prettier" src="https://img.shields.io/badge/code%20style-Prettier-ff69b4?logo=prettier">
-  <img alt="Commitizen" src="https://img.shields.io/badge/commitizen-friendly-orange">
-</p>
-
 ---
 
 ## 🧭 Sobre o projeto
@@ -69,4 +50,143 @@ Nasceu no contexto da disciplina **Contexto Social (CEFET-MG/Timóteo)**, com pr
 - **Boas práticas:** **SOLID**, **Clean Architecture** (quando aplicável), **lint + format**
 
 **Estrutura de pastas (exemplo):**
+```
+/src
+/app              # navegação / shell
+/assets           # fontes, ícones, imagens
+/components       # UI reutilizável
+/features         # módulos por domínio (events, feed, prayer, groups, auth)
+/services         # APIs e repositórios
+/styles           # tema e tokens
+/utils            # helpers
+```
 
+---
+
+## 🚀 Como executar localmente
+
+### Pré-requisitos
+- **Node.js** `>= 18` e **npm**/**yarn**/**pnpm**  
+- `<Expo CLI | Angular CLI | Flutter SDK>` (se aplicado)
+
+### Instalação
+```bash
+git clone https://github.com/LucasODuarte/AppIgreja.git
+cd AppIgreja
+npm install
+```
+---
+
+### Variáveis de ambiente
+
+Crie um arquivo `.env` (ou `.env.local`) baseado em `.env.example` com as chaves do backend, push e (opcional) pagamentos.
+
+```dotenv
+# -------------------------
+# Autenticação / Backend
+# -------------------------
+AUTH_PROVIDER="<firebase | keycloak | custom>"
+
+# Firebase (exemplo)
+FIREBASE_API_KEY="<sua-api-key>"
+FIREBASE_AUTH_DOMAIN="<seu-dominio.firebaseapp.com>"
+FIREBASE_PROJECT_ID="<seu-project-id>"
+FIREBASE_MESSAGING_SENDER_ID="<seu-sender-id>"
+FIREBASE_APP_ID="<seu-app-id>"
+
+# -------------------------
+# Notificações Push
+# -------------------------
+PUSH_PROVIDER="<FCM | OneSignal>"
+PUSH_KEY="<sua-chave-push>"
+
+# -------------------------
+# Pagamentos (opcional)
+# -------------------------
+PAYMENTS_PROVIDER="<Stripe | MercadoPago>"
+PAYMENTS_PUBLIC_KEY="<sua-chave-publica>"
+```
+---
+
+### Rodando o projeto
+
+```bash
+# Ambiente de desenvolvimento
+npm run dev
+# ou
+npm start
+
+# Expo (mobile)
+expo start
+
+# Angular (web)
+ng serve
+```
+
+---
+
+### Build / Distribuição
+
+```bash
+# Web / PWA
+npm run build
+
+# Mobile (Expo EAS)
+eas build -p android
+eas build -p ios
+
+# Angular (produção)
+ng build --configuration production
+```
+
+---
+
+### Qualidade de código
+
+- **Lint:** `npm run lint` — `<ESLint | TSLint>`
+- **Formatação:** `npm run format` — **Prettier**
+- **Testes unitários:** `npm test` — `<Jest | Vitest | Karma>`
+- **Cobertura:** `npm run test:coverage` (se configurado)
+- **E2E:** `npm run e2e` — `<Cypress | Detox>`
+---
+
+### Segurança & Privacidade
+
+- Nunca comitar chaves e segredos (use `.env` + **Secrets** no CI).
+- Regras de segurança no backend (ex.: **Firestore Rules** / **RBAC**).
+- Coleta mínima de dados pessoais; adequação à **LGPD**.
+- Revisões periódicas de dependências (`npm audit` / `pnpm audit`).
+
+---
+### Roadmap
+
+- [ ] Calendário com recorrência e lembretes
+- [ ] Moderação de conteúdo (mural/comunicados)
+- [ ] Escala de ministérios com confirmação de presença
+- [ ] Relatórios de engajamento (eventos, grupos)
+- [ ] Modo offline (cache seletivo)
+- [ ] Acessibilidade (WCAG AA)
+
+---
+### Contribuição
+
+```bash
+# Passos para contribuir
+git checkout -b feat/minha-feature
+npm run lint && npm test
+git commit -m "feat: descreva sua mudança"
+git push origin feat/minha-feature
+```
+
+---
+
+### Licença
+
+Projeto **acadêmico e sem fins lucrativos**, desenvolvido no âmbito da disciplina **Contexto Social** (CEFET-MG/Timóteo).
+---
+
+### Contato
+
+- **Instituição beneficiada:** Igreja Nossa Senhora de Fátima — Bairro Cidade Nova
+- **Equipe:** Joice Figueiredo · Lucas Oliveira Duarte · Emilly Luiza
+- **Repositório:** https://github.com/LucasODuarte/AppIgreja
